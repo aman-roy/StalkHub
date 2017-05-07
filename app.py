@@ -14,7 +14,7 @@ def profile():
 		#todo
 		return render_template("profile.html")
 	else:
-		return render_template("not_found.html")
+		return render_template("index.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
