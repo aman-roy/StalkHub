@@ -49,6 +49,7 @@ def basic_retrive(user_name):
 		return None
 
 def watch_list(user_name):
+	# concatenate user name to create link
 	link = "https://api.github.com/users/" + user_name + "/subscriptions"
 	
 	# empty list for collecting things I need
@@ -63,6 +64,7 @@ def watch_list(user_name):
 	except:
 		return None
 
+	# pack the box with info we need
 	for i in range(len(data)):
 		box_feed = {}
 		box_feed["full_name"] = data[i]["full_name"]
