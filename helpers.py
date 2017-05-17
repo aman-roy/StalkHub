@@ -47,3 +47,26 @@ def basic_retrive(user_name):
 		return box
 	except:
 		return None
+
+def watch_list(user_name):
+	link = "https://api.github.com/users/" + user_name + "/subscriptions"
+	
+	# empty list for collecting things I need
+	box = []
+
+	# Try to open link and if failed return None
+	try:
+		response = urllib2.urlopen(link)
+		data = json.load(response)
+		if not data:
+			return None
+	except:
+		return None
+
+	for i in range(len(data)):
+		box_feed = {}
+		box_feed["full_name"] = data[i]["full_name"]
+		box_feed["html_url"] = data[i]["html_url"]
+		box.append(box_feed)
+
+	return box
