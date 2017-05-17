@@ -72,3 +72,30 @@ def watch_list(user_name):
 		box.append(box_feed)
 
 	return box
+
+def organizations(user_name):
+	# concatenate user name to create link
+	link = "https://api.github.com/users/" + user_name + "/orgs"
+	
+	# empty list for collecting things I need
+	box = []
+
+	# Try to open link and if failed return None
+	try:
+		response = urllib2.urlopen(link)
+		data = json.load(response)
+		if not data:
+			return None
+	except:
+		return None
+
+	# pack the box with info we need
+	for i in range(len(data)):
+		box_feed = {}
+		box_feed["name"] = data[i]["login"]
+		box_feed["url"] = "https://github.com/" + data[i]["login"]
+		box_feed["icon"] = data[i]["avatar_url"]
+		box.append(box_feed)
+
+	return box
+
