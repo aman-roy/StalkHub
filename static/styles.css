@@ -1,9 +1,11 @@
-.exact-center {
-	position: absolute;
-  width: 300px;
-  height: 200px;
-  z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px;
+body {
+  background: linear-gradient(top, #c04848 6%, #480048 100%);
+  background: -webkit-linear-gradient(top, #c04848 6%, #480048 100%);
+  background: -moz-linear-gradient(top, #c04848 6%, #480048 100%);
+  background: -o-linear-gradient(top, #c04848 6%, #480048 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Bungee', cursive;
+  color: white;
+  font-weight: 100;
 }
