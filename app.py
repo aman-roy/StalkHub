@@ -1,20 +1,37 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from helpers import *
 
 app = Flask(__name__)
 
 @app.route('/')
-def homepage():
+def index():
 	"""Index page"""
 	return render_template("index.html")
 
 @app.route('/profile', methods=["GET", "POST"])
 def profile():
 	"""Render profile according to request"""
+
+	# Get username from post method
+	user = request.form.get("username")
+
+	# Check if the request is given from post method or not
 	if request.method == "POST":
-		#todo
-		return render_template("profile.html")
+		# Get all the data from github api
+		basic = basic_retrive(user)
+		watch = watch_list(user)
+		org = organizations(user)
+
+		# Check if anything is missing or not
+		if not basic or watch or org:
+			return render_template("not_found.html")
+
+		# If everything goes fine
+		return render_template("profile.html", basic=basic, watch=watch, org=org)
+
+	# If request method is get then redirect to 
 	else:
-		return render_template("index.html")
+		return redirect(url_for('index'))
 
 @app.errorhandler(404)
 def page_not_found(e):
