@@ -1,11 +1,15 @@
 body {
-  background: linear-gradient(top, #c04848 6%, #480048 100%);
-  background: -webkit-linear-gradient(top, #c04848 6%, #480048 100%);
-  background: -moz-linear-gradient(top, #c04848 6%, #480048 100%);
-  background: -o-linear-gradient(top, #c04848 6%, #480048 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  font-family: 'Bungee', cursive;
-  color: white;
-  font-weight: 100;
+	font-family: 'Scope One', serif;
+}
+
+#head {
+	font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+a {
+	color: #1F4788;
+}
+
+a:hover {
+    text-decoration: underline;
 }

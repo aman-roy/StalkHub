@@ -6,20 +6,28 @@
 
 {% block main %}
 <div class="container">
-  <h1 class="center-align">StalkHub</h1>
-  <div class="row exact-center">
-    <form class="col s12">
-      <div class="row">
-      	<div class="input-field col s2"></div>
-        <div class="input-field col s8">
-          <input id="Github User name" type="text" class="validate">
-          <label for="Github user-name">Github User-name</label>
-        </div>
-        <div class="input-field col s2"></div>
-      </div>
-    </form>
-  </div>
- </div>
+
+	<div class="row">
+		<div class="col s12" style="padding-top: 150px;">
+			<h1 class="center-align" id="head"><a href="{{ url_for('index') }}"> StalkHub</a></h1>
+		</div>
+	</div>
+
+  
+	<div class="row">
+		<div class="col s2"></div>
+	    <form class="col s8" action="{{ url_for('profile') }}" method="post" style="padding-top: 10px;">
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <i class="material-icons prefix">face</i>
+	          <input id="icon_prefix" type="text" class="validate" name="username">
+	          <label for="icon_prefix">GitHub User-name</label>
+	        </div>
+	      </div>
+	    </form>
+	    <div class="col s2"></div>
+	</div>		
+</div>
 {% endblock %}
 
 

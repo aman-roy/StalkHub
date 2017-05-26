@@ -8,23 +8,31 @@ def index():
 	"""Index page"""
 	return render_template("index.html")
 
+@app.route('/about')
+def about():
+	"""About page"""
+	return render_template("about.html")
+
 @app.route('/profile', methods=["GET", "POST"])
 def profile():
 	"""Render profile according to request"""
 
 	# Get username from post method
 	user = request.form.get("username")
+	if not user:	
+		return redirect(url_for('index'))
 
 	# Check if the request is given from post method or not
 	if request.method == "POST":
 		# Get all the data from github api
 		basic = basic_retrive(user)
+		# Check if anything is missing or not
+		if not basic:
+			return render_template("not_found.html")
+
 		watch = watch_list(user)
 		org = organizations(user)
 
-		# Check if anything is missing or not
-		if not basic or watch or org:
-			return render_template("not_found.html")
 
 		# If everything goes fine
 		return render_template("profile.html", basic=basic, watch=watch, org=org)
