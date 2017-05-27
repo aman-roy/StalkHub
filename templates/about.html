@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+<div class="container">
+
+	<div class="row">
+		<div class="col s12" style="padding-top: 150px;">
+			<h1 class="center-align" id="head"><a href="{{ url_for('index') }}"> StalkHub</a></h1>
+		</div>
+	</div>
+
+  
+	<div class="row">
+		<div class="col s1"></div>
+		<div class="col s10">
+		    <h2 class="center-align"> About </h2>
+		    <hr>
+		    <p class="flow-text">It is a simple web application, written in flask. It uses <strong>GitHub API</strong> to stalk someone Github profile beautifully. So go to <a href="{{ url_for('index') }}"> homepage </a> and enter your <a href="https://github.com"> GitHub </a> username.</p>
+		    <br>
+		    This is created by <a href="http://amanroy.me"> Aman Roy </a>. See codes of this project <a href="https://github.com/aman-roy/StalkHub"> here</a>.
+		</div>
+	    <div class="col s1"></div>
+	</div>		
+</div>
+{% endblock %}
+
+
+
+
