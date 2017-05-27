@@ -26,24 +26,22 @@ def basic_retrive(user_name):
 	if not data['type'] == "User":
 		return None
 
-	# Empty dict
-	box_feed = {}
 
+	box = dict()
 	# Collect everything in box and return box 
 	try:
-		box_feed['login'] = data['login']
-		box_feed['avatar_url'] = data['avatar_url']
-		box_feed['html_url'] = data['html_url']
-		box_feed['name'] = data['name']
-		box_feed['company'] = data['company']
-		box_feed['blog'] = data['blog']
-		box_feed['location'] = data['location']
-		box_feed['bio'] = data['bio']
-		box_feed['public_repos'] = data['public_repos']
-		box_feed['public_gists'] = data['public_gists']
-		box_feed['followers'] = data['followers']
-		box_feed['following'] = data['following']
-		box.append(box_feed)
+		box['login'] = data['login']
+		box['avatar_url'] = data['avatar_url']
+		box['html_url'] = data['html_url']
+		box['name'] = data['name']
+		box['company'] = data['company']
+		box['blog'] = data['blog']
+		box['location'] = data['location']
+		box['bio'] = data['bio']
+		box['public_repos'] = data['public_repos']
+		box['public_gists'] = data['public_gists']
+		box['followers'] = data['followers']
+		box['following'] = data['following']
 		return box
 	except:
 		return None
