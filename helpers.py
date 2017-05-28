@@ -3,13 +3,17 @@
 
 import urllib2
 import json
+import os
+
+# Getting client id and secret for extending rate limit
+secret = '?client_id=' + os.environ.get('CLID') + '&client_secret=' + os.environ.get('CLSEC')
 
 # Basic retrival of data from 
 # https://api.github.com/users/user_name
 def basic_retrive(user_name):
 
 	# concatenate user name to create link
-	link = "https://api.github.com/users/" + user_name
+	link = "https://api.github.com/users/" + user_name + secret
 	# empty list for collecting things I need
 	box = []
 
@@ -48,7 +52,7 @@ def basic_retrive(user_name):
 
 def watch_list(user_name):
 	# concatenate user name to create link
-	link = "https://api.github.com/users/" + user_name + "/subscriptions"
+	link = "https://api.github.com/users/" + user_name + "/subscriptions" + secret
 	
 	# empty list for collecting things I need
 	box = []
@@ -73,7 +77,7 @@ def watch_list(user_name):
 
 def organizations(user_name):
 	# concatenate user name to create link
-	link = "https://api.github.com/users/" + user_name + "/orgs"
+	link = "https://api.github.com/users/" + user_name + "/orgs" + secret
 	
 	# empty list for collecting things I need
 	box = []
