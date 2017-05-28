@@ -65,7 +65,7 @@ def watch_list(user_name):
 	# pack the box with info we need
 	for i in range(len(data)):
 		box_feed = {}
-		box_feed["full_name"] = data[i]["full_name"]
+		box_feed["name"] = data[i]["name"]
 		box_feed["html_url"] = data[i]["html_url"]
 		box.append(box_feed)
 
