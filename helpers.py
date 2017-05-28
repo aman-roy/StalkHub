@@ -5,8 +5,11 @@ import urllib2
 import json
 import os
 
-# Getting client id and secret for extending rate limit
-secret = '?client_id=' + os.environ.get('CLID') + '&client_secret=' + os.environ.get('CLSEC')
+try:
+	# Getting client id and secret for extending rate limit
+	secret = '?client_id=' + os.environ.get('CLID') + '&client_secret=' + os.environ.get('CLSEC')
+except:
+	secret = ''
 
 # Basic retrival of data from 
 # https://api.github.com/users/user_name
