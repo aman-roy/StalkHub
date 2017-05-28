@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ basic.name }}'s Profile 
+{% endblock %}
+
+{% block main %}
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m12 l12">
+				<h1 class="center-align" id="head"><a href="{{ url_for('index') }}"> StalkHub</a></h1>
+			</div>
+		</div>
+		<div class="divider" style="margin-bottom: 50px;"></div>
+
+		<div class="row">
+			<div class="col s12 m3 l3">
+	        	<div class="row">
+	        		<img class="responsive-img materialboxed" src="{{ basic.avatar_url }}">
+	        	</div>
+	        </div>
+	        <br>
+	        <div class="col s12 m9 l9" style="padding-left: 50px">
+	        	<div class="row">
+		        	<span class="flow-text">{{ basic.name }} <small><a href="{{ basic.html_url }}" target="_blank">@{{ basic.login }}</a></small></span><br>
+					{% if basic.bio != None %}
+		        		<span class="flow-text">Bio: <i class="red-text">{{ basic.bio }}</i></span><br>
+					{% endif %}
+		        	{% if basic.company != None %}
+		        		<span class="flow-text">Works at : <span class="red-text">{{ basic.company }}</span></span><br>
+		        	{% endif %}
+		        	{% if basic.location != None %}
+		        		<span class="flow-text">Location : <span class="red-text">{{ basic.location }}</span></span><br>
+					{% endif %}
+		        	{% if basic.blog != None %}
+		        		<span class="flow-text">Website : <span class="red-text"><a href="{{ basic.blog }}" target="_blank">{{ basic.blog }}</a></span></span><br>
+					{% endif %}
+				</div>
+	        </div>
+		</div>
+
+		<div class="row">
+			<div class="col m3 l3 s6">
+				<a href="{{ basic.html_url }}?tab=followers" target="_blank">
+					<div class="card-panel hoverable center-align flow-text">
+	      				<span class="blue-text text-darken-2">Followers<br>{{ basic.followers }}</span>
+	    			</div>
+    			</a>
+			</div>
+			<div class="col m3 l3 s6">
+				<a href="{{ basic.html_url }}?tab=following" target="_blank">
+					<div class="card-panel hoverable center-align flow-text">
+	      				<span class="blue-text text-darken-2">Following<br>{{ basic.following }}</span>
+	    			</div>
+	    		</a>
+			</div>
+			<div class="col m3 l3 s6">
+				<a href="{{ basic.html_url }}?tab=repositories" target="_blank">
+					<div class="card-panel hoverable center-align flow-text">
+	      				<span class="blue-text text-darken-2">Repos<br>{{ basic.public_repos }}</span>
+	    			</div>
+	    		</a>
+			</div>
+			<div class="col m3 l3 s6">
+				<a href="https://gist.github.com/{{ basic.login }}" target="_blank">
+					<div class="card-panel hoverable center-align flow-text">
+	      				<span class="blue-text text-darken-2">Gists<br>{{ basic.public_gists }}</span>
+	    			</div>
+	    		</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+
+
