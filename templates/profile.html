@@ -70,42 +70,65 @@
 			</div>
 		</div>
 
-		<div class="divider"></div>
+		<hr>
 
 		<div class="row">
-			<div class="col m6 l6 s12">
+			<div class="col s12 m12 l12">
+
+				<ul class="collapsible" data-collapsible="accordion">
+    				<li>
+      					<div class="collapsible-header"><i class="material-icons">work</i>{{ basic.name }}'s Activity</div>
+      					<div class="collapsible-body">
+      						<span>
+      							<script language="JavaScript" src="http://feed2js.org//feed2js.php?src=https%3A%2F%2Fgithub.com%2F{{ basic.login }}.atom&date=y&targ=y&utf=y&html=p"  charset="UTF-8" type="text/javascript"></script>
+								<noscript>
+									<a href="http://feed2js.org//feed2js.php?src=https%3A%2F%2Fgithub.com%2F{{ basic.login }}.atom&date=y&targ=y&utf=y&html=y">View RSS feed</a>
+								</noscript>
+      						</span>
+      					</div>
+    				</li>
+    			</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			{% if watch != None %}
+			<div class="col m12 l12 s12">
 				<div class="card #0277bd light-blue darken-3">
 		            <div class="card-content white-text">
 		              <span class="card-title">{{ basic.name }}'s Watchlist</span>
-		              {% if watch != None %}
 						{% for item in watch %}
 							<div class="chip truncate"><a href="{{ item.html_url }}" target="_blank">{{ item.name }}</a></div>
 						{% endfor %}
-		              {% else %}
-		              	<span class="center-align"> N/A </span>
-		              {% endif %}
 		            </div>
           		</div>
 			</div>
-			<div class="col m6 l6 s12">
+			{% endif %}
+
+			{% if org != None %}
+			<hr>
+			<div class="col m12 l12 s12">
 				<div class="card #0277bd light-blue darken-3">
 		            <div class="card-content white-text">
 		              <span class="card-title">{{ basic.name }}'s organization(s)</span>
-		              {% if org != None %}
 						{% for item in org %}
 							<div class="chip">
 								<img src="{{ item.icon }}" alt="{{ item.name }}">
 								<a href="{{ item.url }}">{{ item.name }}</a>
 							</div>
 						{% endfor %}
-		              {% else %}
-		              	<span class="center-align"> N/A </span>
-		              {% endif %}
 		            </div>
           		</div>
 			</div>
+			{% endif %}
+
 		</div>
 
+		<div class="divider"></div>
+		
+		
 
 	</div>
 {% endblock %}
