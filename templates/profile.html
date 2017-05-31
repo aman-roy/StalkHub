@@ -22,7 +22,10 @@
 	        <br>
 	        <div class="col s12 m9 l9" style="padding-left: 50px">
 	        	<div class="row">
-		        	<span class="flow-text">{{ basic.name }} <small><a href="{{ basic.html_url }}" target="_blank">@{{ basic.login }}</a></small></span><br>
+	        		{% if basic.bio != None %}
+		        	<span class="flow-text">{{ basic.name }}</span>
+		        	{% endif %}
+		        	<small class="flow-text"><a href="{{ basic.html_url }}" target="_blank">@{{ basic.login }}</a></small><br>
 					{% if basic.bio != None %}
 		        		<span class="flow-text">Bio: <i class="red-text">{{ basic.bio }}</i></span><br>
 					{% endif %}
@@ -32,7 +35,7 @@
 		        	{% if basic.location != None %}
 		        		<span class="flow-text">Location : <span class="red-text">{{ basic.location }}</span></span><br>
 					{% endif %}
-		        	{% if basic.blog != None %}
+		        	{% if basic.blog != "" %}
 		        		<span class="flow-text">Website : <span class="red-text"><a href="{{ basic.blog }}" target="_blank">{{ basic.blog }}</a></span></span><br>
 					{% endif %}
 				</div>
