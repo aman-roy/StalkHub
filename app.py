@@ -34,7 +34,7 @@ def profile():
 		org = organizations(user)
 
 
-		# If everything goes fine
+		# If everything goes finez
 		return render_template("profile.html", basic=basic, watch=watch, org=org)
 
 	# If request method is get then redirect to 
