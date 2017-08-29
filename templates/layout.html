@@ -4,27 +4,27 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
 	<title>StalkHub | {% block title %}{% endblock %}</title>
-	
+
 	<link rel="icon" href="{{ url_for('static', filename='stalkhub_icon.png') }}">
 
 	<!-- Compiled and minified CSS -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
   	<!--Import Google Icon Font-->
-  	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   	<!-- Import Jquery-->
   	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
   	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-	
+
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet">
- 
+
   	<!-- Custom CSS -->
   	<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
 	{% block extras %}{% endblock %}
