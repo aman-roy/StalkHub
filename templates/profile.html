@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    {{ basic.name }}'s Profile 
+    {{ basic.name }}'s Profile
 {% endblock %}
 
 {% block main %}
@@ -95,7 +95,18 @@
 		</div>
 
 		<hr>
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
+        <div class="calendar">
+				{{ basic.login }}
+        </div>
+        <script>GitHubCalendar(".calendar","{{ basic.login }}");</script>
+      </div>
 
+    </div>
+		<hr />
 		<div class="row">
 			{% if watch != None %}
 			<div class="col m12 l12 s12">
@@ -130,12 +141,8 @@
 		</div>
 
 		<div class="divider"></div>
-		
-		
+
+
 
 	</div>
 {% endblock %}
-
-
-
-

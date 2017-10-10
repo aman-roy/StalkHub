@@ -19,7 +19,8 @@ def profile():
 
 	# Get username from post method
 	user = request.form.get("username")
-	if not user:	
+	#print user
+	if not user:
 		return redirect(url_for('index'))
 
 	# Check if the request is given from post method or not
@@ -37,7 +38,7 @@ def profile():
 		# If everything goes fine
 		return render_template("profile.html", basic=basic, watch=watch, org=org)
 
-	# If request method is get then redirect to 
+	# If request method is get then redirect to
 	else:
 		return redirect(url_for('index'))
 

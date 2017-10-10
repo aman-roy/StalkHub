@@ -1,4 +1,4 @@
-# This file has all the functions which will 
+# This file has all the functions which will
 # be used in retriving data from GitHub API.
 
 import urllib2
@@ -52,6 +52,7 @@ def basic_retrive(user_name):
         box['public_gists'] = data['public_gists']
         box['followers'] = data['followers']
         box['following'] = data['following']
+        #print box
         return box
     except:
         return None
