@@ -13,3 +13,10 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px){
+	.calendar-wrapper{
+		overflow-x: scroll;
+		padding: 0px !important;
+	}
+}
