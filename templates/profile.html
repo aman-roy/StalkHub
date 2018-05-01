@@ -27,7 +27,7 @@
 		        	{% endif %}
 		        	<small class="flow-text"><a href="{{ basic.html_url }}" target="_blank">@{{ basic.login }}</a></small><br>
 					{% if basic.bio != None %}
-		        		<span class="flow-text">Bio: <i class="red-text">{{ basic.bio }}</i></span><br>
+		        		<span class="flow-text">Bio: <i class="red-text">{{ emoji.emojize(basic.bio) }}</i></span><br>
 					{% endif %}
 		        	{% if basic.company != None %}
 		        		<span class="flow-text">Works at : <span class="red-text">{{ basic.company }}</span></span><br>
