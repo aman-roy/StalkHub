@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from helpers import *
+import emoji;
 
 app = Flask(__name__)
 
@@ -36,7 +37,7 @@ def profile():
 
 
 		# If everything goes fine
-		return render_template("profile.html", basic=basic, watch=watch, org=org)
+		return render_template("profile.html", basic=basic, watch=watch, org=org, emoji=emoji)
 
 	# If request method is get then redirect to
 	else:
