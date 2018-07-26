@@ -3,7 +3,7 @@ packaging==16.8
 pyparsing==2.2.0
 six==1.10.0
 Flask==0.10.1
-gunicorn==19.1.0
+gunicorn==19.5.0
 Jinja2==2.8
 PyYAML==3.11
 Werkzeug==0.10.4
