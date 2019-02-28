@@ -2,7 +2,7 @@ appdirs==1.4.3
 packaging==16.8
 pyparsing==2.2.0
 six==1.10.0
-Flask==0.10.1
+flask>=0.12.3
 gunicorn==19.5.0
 Jinja2==2.8
 PyYAMLpyyaml>=4.2b1
